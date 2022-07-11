@@ -9,10 +9,14 @@ Aca estan los contratos de la seccion math de Capture The Ether adaptados a foun
 Si queres instalar foundry podes seguir los pasos de este video:
 https://www.youtube.com/watch?v=fS0vF3wb3bs
 
+---
+Aca tenes un video tutorial de todos ejercicios en este repo
 
-Aca tenes un video tutorial de todos ejercicios en este repo:
-TODO
-
+[Challenge 1]()
+Correr test con;
+```bash
+forge test --match-path test/1*
+```
 
 ---
 ## Soluciones
