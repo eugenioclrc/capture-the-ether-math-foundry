@@ -12,7 +12,7 @@ https://www.youtube.com/watch?v=fS0vF3wb3bs
 ---
 Aca tenes un video tutorial de todos ejercicios en este repo
 
-[Challenge 1]()
+[Challenge 1](https://www.youtube.com/watch?v=c7Pnn-Oop_Q)
 Correr test con;
 ```bash
 forge test --match-path test/1*
